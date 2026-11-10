@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- build v4 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -42,6 +43,7 @@ body.is-night{
 }
 
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{
   margin:0; min-height:100%; color:var(--fg); font-family:var(--sans); font-size:16px; line-height:1.6;
@@ -75,10 +77,9 @@ p{margin:0}
 .steps{display:flex; align-items:center; gap:14px}
 .dots{display:flex; gap:6px; margin:0; padding:0; list-style:none}
 .dot{
-  width:26px; height:26px; display:grid; place-items:center; background:none; border:0; padding:0; cursor:pointer;
+  width:26px; height:26px; display:grid; place-items:center;
 }
 .dot::after{content:""; width:8px; height:8px; border-radius:50%; background:var(--line); transition:transform .3s, background .3s, width .3s}
-.dot:hover::after{background:var(--accent2)}
 .dot[aria-current="step"]::after{background:linear-gradient(90deg,var(--btn-a),var(--btn-b)); width:20px; border-radius:6px}
 .counter{font-size:11px; letter-spacing:.18em; color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap}
 
@@ -105,7 +106,7 @@ h2 em{color:var(--accent); font-style:italic}
 .center .rule{margin-inline:auto}
 
 /* Buttons */
-.actions{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:44px; width:100%}
+.actions{display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:12px; margin-top:44px; width:100%}
 .btn{
   min-height:48px; padding:0 24px; border-radius:999px; cursor:pointer;
   border:1px solid var(--line); background:color-mix(in srgb, var(--card) 80%, transparent); color:var(--fg);
@@ -301,7 +302,7 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
     <p>I hope this year brings you countless reasons to be happy.</p>
     <div class="signature">With love, ♡</div>
   </div>
-  <div class="actions"><button type="button" class="btn" data-go="start">← Back</button><button type="button" class="btn primary" data-go="things">Next →</button></div>
+  <div class="actions"><button type="button" class="btn primary" data-go="things">Next →</button></div>
 </section>
 
 <section class="page" id="view-things" aria-labelledby="t-things" hidden>
@@ -314,7 +315,7 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
     <article class="memory-card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H10l-4 4v-4H4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></div><h3>The memories</h3><p>Remember when we used to talk for HOURS every single day?! 😭 i miss those times sm i wish to have to those times back Shizu 🫠 the memories of annoying. Gossiping... Tea sharing. Laughing. Suffering. it all were the best memory of my life with you i wish those golden times come back 💗😭</p></article>
     <article class="memory-card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 8a4 4 0 1 0 0 8c4 0 4-8 8-8a4 4 0 1 1 0 8c-4 0-4-8-8-8z"/></svg></div><h3>Simply you</h3><p>Everyday. Every Year. Every Month to the week to the hour to the seconds. I love you. you've been nothing but a BESTEST friend of all time to me and.. I am so GRATEFUL for it. I just wish people would get friends like you the sadness in their lives will be GONE! truly. youre the best friend. 💋</p></article>
   </div>
-  <div class="actions"><button type="button" class="btn" data-go="letter">← Back</button><button type="button" class="btn primary" data-go="here">One last page →</button></div>
+  <div class="actions"><button type="button" class="btn primary" data-go="here">One last page →</button></div>
 </section>
 
 <section class="page center" id="view-here" aria-labelledby="t-here" hidden>
@@ -326,7 +327,7 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
   <div class="rule"></div>
   <p class="big-quote">Happy Birthday, Shizuka.</p>
   <p class="signature-large">With love, Aruu ♡</p>
-  <div class="actions"><button type="button" class="btn" data-go="things">← Back</button><button type="button" class="btn primary" data-go="star">Open your gift ✦</button></div>
+  <div class="actions"><button type="button" class="btn primary" data-go="star">Open your gift ✦</button></div>
 </section>
 
 <section class="page center" id="view-star" aria-labelledby="t-star" hidden>
@@ -347,7 +348,7 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
     <p class="body">You probably don't realize how much light you bring into someone's life. I hope you never forget how special you are, even on the days you don't feel like it. 💗</p>
     <p class="closing">Keep shining, Shizu. Always. ♡</p>
   </div>
-  <div class="on-night-actions"><button type="button" class="btn" data-go="here">← Back to your birthday</button><button type="button" class="btn primary" data-go="cake">One last little surprise 🎀</button></div>
+  <div class="on-night-actions"><button type="button" class="btn primary" data-go="cake">One last little surprise 🎀</button></div>
 </section>
 
 <section class="page center" id="view-cake" aria-labelledby="t-cake" hidden>
@@ -406,7 +407,7 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
       <p>Wish every year goes smooth Shizu. ♡</p>
     </div>
   </div>
-  <div class="actions"><button type="button" class="btn" data-go="star">← Back to the star</button><button type="button" class="btn primary" data-go="love">One more game ✦</button></div>
+  <div class="actions"><button type="button" class="btn primary" data-go="love">One more game ✦</button></div>
 </section>
 
 <section class="page center" id="view-love" aria-labelledby="t-love" hidden>
@@ -418,8 +419,7 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
   <div class="love-stats"><span id="loveCount">Opened 0 / 15</span><span id="loveBest">Highest —</span></div>
   <div class="love-field" id="loveField"></div>
   <div class="on-night-actions"><button type="button" class="btn" id="loveReset">Shuffle the sky</button></div>
-  <div class="actions"><button type="button" class="btn" data-go="cake">← Back to the cake</button><button type="button" class="btn primary" data-go="start">From the beginning ↗</button></div>
-</section>
+  </section>
 </main>
 
 <footer>Made with love, just for Shizuka · November 13</footer>
@@ -438,9 +438,8 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
   var dotsEl=$("dots");
   views.forEach(function(v,i){
     var li=document.createElement("li");
-    var b=document.createElement("button");
-    b.type="button"; b.className="dot"; b.setAttribute("aria-label","Page "+(i+1)+": "+labels[v]);
-    b.addEventListener("click",function(){go(v)});
+    var b=document.createElement("span");
+    b.className="dot"; b.setAttribute("aria-label","Page "+(i+1)+" of "+views.length);
     li.appendChild(b); dotsEl.appendChild(li);
   });
 
@@ -461,7 +460,7 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
   function show(name){
     if(views.indexOf(name)<0) name="start";
     current=name;
-    views.forEach(function(v){ $("view-"+v).hidden=(v!==name); });
+    views.forEach(function(v){ var el=$("view-"+v), off=(v!==name); el.hidden=off; el.style.display=off?"none":""; });
     var i=views.indexOf(name);
     $("counter").textContent=String(i+1).padStart(2,"0")+" / "+String(views.length).padStart(2,"0");
     Array.prototype.forEach.call(dotsEl.querySelectorAll(".dot"),function(d,k){
@@ -475,31 +474,16 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
     if(name==="love") skyLove.start(); else skyLove.stop();
   }
   function go(name){
-    if(location.hash.slice(1)===name){ show(name); return; }
-    location.hash=name;
+    if(views.indexOf(name)===views.indexOf(current)+1) show(name);
   }
-  window.addEventListener("hashchange",function(){ show(location.hash.slice(1)); });
   Array.prototype.forEach.call(document.querySelectorAll("[data-go]"),function(b){
     b.addEventListener("click",function(){ go(b.getAttribute("data-go")); });
   });
   document.addEventListener("keydown",function(e){
-    if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
-    var i=views.indexOf(current);
-    if(e.key==="ArrowRight"&&i<views.length-1) go(views[i+1]);
-    else if(e.key==="ArrowLeft"&&i>0) go(views[i-1]);
-    else if(e.key==="Escape"){ var r=$("starReveal"); if(r&&!r.hidden) toggleStar(false); }
+    if(e.key==="Escape"){ var r=$("starReveal"); if(r&&!r.hidden) toggleStar(false); }
   });
-  var tx=0,ty=0;
-  document.addEventListener("touchstart",function(e){ tx=e.changedTouches[0].clientX; ty=e.changedTouches[0].clientY; },{passive:true});
-  document.addEventListener("touchend",function(e){
-    var dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty;
-    if(Math.abs(dx)>80&&Math.abs(dy)<50){
-      var i=views.indexOf(current);
-      if(dx<0&&i<views.length-1) go(views[i+1]); else if(dx>0&&i>0) go(views[i-1]);
-    }
-  },{passive:true});
 
-  /* Particles (confetti / sparkles) */
+    /* Particles (confetti / sparkles) */
   var fx=$("fx"), fctx=fx.getContext("2d"), parts=[], fxRaf=0, dpr=Math.min(window.devicePixelRatio||1,2);
   function sizeFx(){ fx.width=innerWidth*dpr; fx.height=innerHeight*dpr; }
   sizeFx(); window.addEventListener("resize",sizeFx);
@@ -640,7 +624,7 @@ footer{max-width:1120px; margin-inline:auto; border-top:1px solid var(--line); p
     setTimeout(function(){ $("cakeMessage").scrollIntoView({behavior:reduced?"auto":"smooth",block:"nearest"}); },350);
   });
 
-  show(location.hash.slice(1)||"start");
+  show("start");
 })();
 </script>
 
